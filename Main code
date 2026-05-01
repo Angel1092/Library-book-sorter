@@ -1,0 +1,126 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+// My book class
+class Book {
+    String title;
+    String author;
+    boolean isCheckedOut;
+
+    public Book(String title, String author) {
+        this.title = title;
+        this.author = author;
+        this.isCheckedOut = false;
+    }
+
+    public void displayInfo() {
+        String status = isCheckedOut ? "Checked Out" : "Available";
+        System.out.println(title + " by " + author + " | " + status);
+    }
+}
+
+// The library class
+class Library {
+    ArrayList<Book> books = new ArrayList<>();
+
+    public void addBook(String title, String author) {
+        books.add(new Book(title, author));
+        System.out.println("Book added!");
+    }
+
+    public void displayBooks() {
+        if (books.isEmpty()) {
+            System.out.println("No books in the library.");
+            return;
+        }
+
+        for (Book book : books) {
+            book.displayInfo();
+        }
+    }
+
+    public void checkOutBook(String title) {
+        for (Book book : books) {
+            if (book.title.equalsIgnoreCase(title)) {
+                if (!book.isCheckedOut) {
+                    book.isCheckedOut = true;
+                    System.out.println("Book checked out!");
+                } else {
+                    System.out.println("That book is already checked out.");
+                }
+                return;
+            }
+        }
+        System.out.println("Book not found.");
+    }
+
+    public void returnBook(String title) {
+        for (Book book : books) {
+            if (book.title.equalsIgnoreCase(title)) {
+                if (book.isCheckedOut) {
+                    book.isCheckedOut = false;
+                    System.out.println("Book returned!");
+                } else {
+                    System.out.println("That book was not checked out.");
+                }
+                return;
+            }
+        }
+        System.out.println("Book not found.");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Library library = new Library();
+
+        while (true) {
+            System.out.println("\n--- Library Menu ---");
+            System.out.println("1. Add Book");
+            System.out.println("2. View Books");
+            System.out.println("3. Check Out Book");
+            System.out.println("4. Return Book");
+            System.out.println("5. Exit");
+            System.out.print("Choose an option: ");
+
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // clear buffer
+
+            if (choice == 1) {
+                System.out.print("Enter title: ");
+                String title = scanner.nextLine();
+
+                System.out.print("Enter author: ");
+                String author = scanner.nextLine();
+
+                library.addBook(title, author);
+
+            } else if (choice == 2) {
+                library.displayBooks();
+
+            } else if (choice == 3) {
+                System.out.print("Enter title to check out: ");
+                String title = scanner.nextLine();
+
+                library.checkOutBook(title);
+
+            } else if (choice == 4) {
+                System.out.print("Enter title to return: ");
+                String title = scanner.nextLine();
+
+                library.returnBook(title);
+
+            } else if (choice == 5) {
+                System.out.println("Goodbye!");
+                break;
+
+            } else {
+                System.out.println("Invalid option.");
+            }
+        }
+
+        scanner.close();
+    }
+}
