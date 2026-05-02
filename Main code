@@ -71,7 +71,7 @@ class Library {
 }
 
 // Main class
-public class Main {
+public class LibrarySorter {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Library library = new Library();
