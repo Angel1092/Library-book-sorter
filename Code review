@@ -1,0 +1,20 @@
+The code is really solid! I like it a lot, but there are a few things I would change.
+
+I think that with lines that have numbers like 7 (tableau size) and 13 (king rank) they should be constants in order to improve the readability and make changes much easier
+
+I think the display method is a bit long and handles a lot, it could be broken into smaller methods for clarity
+
+I also think that some of the logic methods for validating moves could instead be extracted into helper methods to help reduce the repetition and improve the readability
+
+
+Finally I think that the imput handeling (play switch statement) could be separated into its own method in order to make the game loop cleaner.
+
+
+REFLECTION:
+
+I totally understand what you mean now, reviewing other people's code is much more challenging than I thought i'd be since it was difficult to know what I should look for, but after going through it I found a couple minor things I would personally change (the code is really great though). 
+
+I found it interesting how code that works correctly can still be improved in terms of readability and structure.
+
+
+Overall going through this process helped me really understand the importance of writing your code clean and organized, not just for functionability.
