@@ -1,20 +1,17 @@
-The code is really solid! I like it a lot, but there are a few things I would change.
+The code is really solid overall, and I liked it a lot, but there are a few things I would personally change.
 
-I think that with lines that have numbers like 7 (tableau size) and 13 (king rank) they should be constants in order to improve the readability and make changes much easier
+First, I think values like 7 (tableau size) and 13 (king rank) should be stored as constants. This would improve readability and make the code easier to modify later.
 
-I think the display method is a bit long and handles a lot, it could be broken into smaller methods for clarity
+I also think the `display()` method is a bit long and handles several responsibilities at once, so it could be broken into smaller helper methods for better clarity and organization.
 
-I also think that some of the logic methods for validating moves could instead be extracted into helper methods to help reduce the repetition and improve the readability
+In addition, some of the move-validation logic could be extracted into helper methods to reduce repetition and improve readability.
 
+Finally, I think the input handling inside the `play()` method, especially the switch statement, could be separated into its own method to make the main game loop cleaner and easier to follow.
 
-Finally I think that the imput handeling (play switch statement) could be separated into its own method in order to make the game loop cleaner.
+Reflection:
 
+I understand now that reviewing other people’s code is much more challenging than I expected. At first, it was difficult to know what kinds of things I should be looking for, but after going through the code carefully, I found a few smaller improvements I would personally make. Overall though, I think the code is really well written.
 
-REFLECTION:
+I also found it interesting that code can work correctly while still having room for improvement in terms of readability, organization, and structure.
 
-I totally understand what you mean now, reviewing other people's code is much more challenging than I thought i'd be since it was difficult to know what I should look for, but after going through it I found a couple minor things I would personally change (the code is really great though). 
-
-I found it interesting how code that works correctly can still be improved in terms of readability and structure.
-
-
-Overall going through this process helped me really understand the importance of writing your code clean and organized, not just for functionability.
+Overall, this process helped me better understand the importance of writing clean and organized code, not just code that functions properly.
